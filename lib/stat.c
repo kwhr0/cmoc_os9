@@ -1,7 +1,7 @@
 #include <fcntl.h>
 
 __norts__ asm int
-getstat(int stat, int path, void *p1, void *p2)
+getstat(int stat, int path, ...)
 {
     asm
     {
@@ -42,7 +42,7 @@ gsbye   puls    y,u
 } 
 
 __norts__ asm int
-setstat(int stat, int param)
+setstat(int stat, int path, ...)
 {
     asm
     {

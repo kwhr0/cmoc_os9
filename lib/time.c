@@ -1,7 +1,7 @@
 #include "time.h"
 
 __norts__ asm error_code
-_os_getime(_os_time *time)
+_os_gettime(_os_time *time)
 {
     asm
     {
@@ -17,7 +17,7 @@ _osret  EXTERN
 
 
 __norts__ asm error_code
-_os_setime(_os_time *time)
+_os_settime(_os_time *time)
 {
     asm
     {

@@ -57,7 +57,7 @@ createok
 
 
 __norts__ asm error_code
-_os_open(char *pathname, int mode, path_id *path)
+_os_open(char *pathname, int mode, unsigned char *path)
 {
     asm
     {
@@ -70,11 +70,7 @@ _os_open(char *pathname, int mode, path_id *path)
 		lda		    5,s				; get mode 
 		os9		    I$Open 
 		lblo	    _oserr
-		pshs	    d
-		tfr		    a,b
-		clra
-		std		    [6+2,s]
-		puls	    d
+		sta	[6,s]
 		lbra	    _osret
     }
 }

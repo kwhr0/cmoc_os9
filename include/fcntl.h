@@ -35,7 +35,7 @@ typedef int path_id;
 
 /* _os style OS-9 I/O calls */
 error_code _os_create(char *pathname, int mode, path_id *path, int perm);
-error_code _os_open(char *pathname, int mode, path_id *path);
+error_code _os_open(char *pathname, int mode, unsigned char *path);
 error_code _os_close(int mode);
 error_code _os_read(path_id path, void *data, int *count);
 error_code _os_readln(path_id path, void *data, int *count);
@@ -47,8 +47,8 @@ error_code _os_seek(path_id path, long position);
 error_code _os_ss_attr(char *pathname, int perm);
 
 /* traditional OS-9 stat calls */
-int getstat(int code, int path, void *p1, void *p2);
-int setstat(int code, int param);
+int getstat(int code, int path, ...);
+int setstat(int code, int path, ...);
 
 void pflinit(void);
 

@@ -15,5 +15,5 @@ typedef struct os_time
     byte seconds;
 } _os_time;
 
-error_code _os_getime(_os_time *time);
-error_code _os_setime(_os_time *time);
+error_code _os_gettime(_os_time *time);
+error_code _os_settime(_os_time *time);
